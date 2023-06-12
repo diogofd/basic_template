@@ -1,0 +1,18 @@
+\input{preamble}
+
+\begin{document}
+
+\title{Notes on Stacks}
+\author{Diogo Freire de Andrade}
+
+
+
+
+\maketitle
+
+
+\tableofcontents
+
+
+
+\end{document}

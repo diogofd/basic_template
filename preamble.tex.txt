@@ -1,0 +1,455 @@
+\documentclass{amsart}
+
+\headheight=8pt
+\topmargin=0pt
+\textheight=624pt
+\textwidth=432pt
+\oddsidemargin=18pt
+\evensidemargin=18pt
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{mathrsfs}
+\usepackage{amscd}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{amsbsy}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{eucal}
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\usepackage{soul}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+
+
+\usepackage{tikz}
+%\usetikzlibrary{patterns,shapes.geometric,arrows,decorations.markings}
+\usetikzlibrary{patterns,shapes.geometric,arrows,decorations.markings,arrows.meta}
+\usepackage{tikz-3dplot}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\colorlet{lightgray}{black!15}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+\tikzset{midarrow/.style={decoration={
+    markings,
+    mark=at position {#1} with {\arrow{>}}},postaction={decorate}}}
+
+
+
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{lemma*}[theorem]{Lemma 3.20}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{con}[theorem]{Consequence}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{ack}[theorem]{Acknowledgments}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{terminology}[theorem]{Terminology}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{q}[theorem]{Question}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{variant}[theorem]{Variant}
+
+
+\theoremstyle{remark}
+
+
+\definecolor{orange}{rgb}{.95,0.5,0}
+\definecolor{light-gray}{gray}{0.75}
+\definecolor{brown}{cmyk}{0, 0.8, 1, 0.6}
+\definecolor{plum}{rgb}{.5,0,1}
+
+
+\DeclareMathOperator{\Link}{\sf Link}
+\DeclareMathOperator{\Fin}{\sf Fin}
+\DeclareMathOperator{\vect}{\sf Vect}
+\DeclareMathOperator{\Vect}{\cV{\sf ect}}
+\DeclareMathOperator{\Sfr}{S-{\sf fr}}
+\DeclareMathOperator{\nfr}{\mathit{n}-{\sf fr}}
+
+\DeclareMathOperator{\pr}{\mathsf{pr}}
+\DeclareMathOperator{\ev}{\mathsf{ev}}
+
+
+\DeclareMathOperator{\uno}{\mathbbm{1}}
+
+
+
+\DeclareMathOperator{\Alg}{\sf Alg}
+\DeclareMathOperator{\CAlg}{\sf CAlg}
+\DeclareMathOperator{\man}{\sf Man}
+\DeclareMathOperator{\Man}{\cM{\sf an}}
+\DeclareMathOperator{\Mod}{\sf Mod}
+\DeclareMathOperator{\unzip}{\sf Unzip}
+\DeclareMathOperator{\Snglr}{\cS{\sf nglr}}
+\DeclareMathOperator{\TwAr}{\sf TwAr}
+\DeclareMathOperator{\cSpan}{\sf cSpan}
+\DeclareMathOperator{\Kan}{\sf Kan}
+\DeclareMathOperator{\Psh}{\sf PShv}
+
+
+\DeclareMathOperator{\cpt}{\sf cpt}
+\DeclareMathOperator{\Aut}{\sf Aut}
+\DeclareMathOperator{\colim}{{\sf colim}}
+\DeclareMathOperator{\relcolim}{{\sf rel.\!colim}}
+\DeclareMathOperator{\limit}{{\sf lim}}
+\DeclareMathOperator{\cone}{\sf cone}
+\DeclareMathOperator{\Der}{\sf Der}
+\DeclareMathOperator{\Ext}{\sf Ext}
+\DeclareMathOperator{\hocolim}{\sf hocolim}
+\DeclareMathOperator{\holim}{\sf holim}
+\DeclareMathOperator{\Hom}{\sf Hom}
+\DeclareMathOperator{\End}{\sf End}
+\DeclareMathOperator{\ulhom}{\underline{\Hom}}
+\DeclareMathOperator{\fun}{\sf Fun}
+\DeclareMathOperator{\Fun}{{\sf Fun}}
+\DeclareMathOperator{\Iso}{\sf Iso}
+\DeclareMathOperator{\map}{\sf Map}
+\DeclareMathOperator{\Map}{{\sf Map}}
+\DeclareMathOperator{\Mapc}{{\sf Map}_{\sf c}}
+\DeclareMathOperator{\Gammac}{{\Gamma}_{\!\sf c}}
+\DeclareMathOperator{\Tot}{\sf Tot}
+\DeclareMathOperator{\Spec}{\sf Spec}
+\DeclareMathOperator{\Spf}{\sf Spf}
+\DeclareMathOperator{\Def}{\sf Def}
+\DeclareMathOperator{\stab}{\sf Stab}
+\DeclareMathOperator{\costab}{\sf Costab}
+\DeclareMathOperator{\ind}{\sf Ind}
+\DeclareMathOperator{\coind}{\sf Coind}
+\DeclareMathOperator{\res}{\sf Res}
+\DeclareMathOperator{\Ker}{\sf Ker}
+\DeclareMathOperator{\coker}{\sf Coker}
+\DeclareMathOperator{\pt}{\sf pt}
+\DeclareMathOperator{\Sym}{\sf Sym}
+
+\DeclareMathOperator{\str}{\sf str}
+
+\DeclareMathOperator{\exit}{\sf Exit}
+\DeclareMathOperator{\Exit}{\bcE{\sf xit}}
+
+\DeclareMathOperator{\cylr}{{\sf Cylr}}
+\DeclareMathOperator{\cylo}{{\sf Cylo}}
+
+
+
+
+\DeclareMathOperator{\Cat}{{\sf Cat}}
+\DeclareMathOperator{\cat}{\fC{\sf at}}
+\DeclareMathOperator{\Gcat}{{\sf GCat}_{\oo}}
+\DeclareMathOperator{\gcat}{{\sf GCat}}
+\DeclareMathOperator{\Dcat}{{\sf GCat}}
+\DeclareMathOperator{\dcat}{\fG\fC{\sf at}}
+\DeclareMathOperator{\Mcat}{\cM{\sf Cat}}
+\DeclareMathOperator{\mcat}{\fD{\sf Cat}}
+
+
+
+
+
+
+\DeclareMathOperator{\Ar}{{\sf Ar}}
+\DeclareMathOperator{\twar}{{\sf TwAr}}
+
+
+\DeclareMathOperator{\diskcat}{\sf {\cD}isk_{\mathit n}^\tau-Cat_\infty}
+\DeclareMathOperator{\mfdcat}{\sf {\cM}fd_{\mathit n}^\tau-Cat_\infty}
+\DeclareMathOperator{\diskone}{\sf {\cD}isk_{1}^{\vfr}-Cat_\infty}
+
+\DeclareMathOperator{\symcat}{\sf Sym-Cat_\infty}
+\DeclareMathOperator{\encat}{\cE_{\mathit n}-\sf Cat}
+\DeclareMathOperator{\moncat}{\sf Mon-Cat_\infty}
+
+\DeclareMathOperator{\inrshv}{\sf inr-shv}
+\DeclareMathOperator{\clsshv}{\sf cls-shv}
+
+
+
+\DeclareMathOperator{\qc}{\sf QC}
+\DeclareMathOperator{\m}{\sf Mod}
+\DeclareMathOperator{\bi}{\sf Bimod}
+\DeclareMathOperator{\perf}{\sf Perf}
+\DeclareMathOperator{\shv}{\sf Shv}
+\DeclareMathOperator{\Shv}{\sf Shv}
+
+
+
+\DeclareMathOperator{\psh}{\sf PShv}
+\DeclareMathOperator{\gshv}{\sf GShv}
+\DeclareMathOperator{\csh}{\sf Coshv}
+\DeclareMathOperator{\comod}{\sf Comod}
+\DeclareMathOperator{\M}{\mathsf{-Mod}}
+\DeclareMathOperator{\coalg}{\mathsf{-coalg}}
+\DeclareMathOperator{\ring}{\mathsf{-rings}}
+\DeclareMathOperator{\alg}{\mathsf{Alg}}
+\DeclareMathOperator{\artin}{{\sf Artin}}%{\disk_{\mathit n}\alg^{\sf Art}_{\mathit k}}
+\DeclareMathOperator{\art}{\mathsf{Art}}
+\DeclareMathOperator{\triv}{\mathsf{Triv}}
+\DeclareMathOperator{\cobar}{\mathsf{cBar}}
+\DeclareMathOperator{\ba}{\mathsf{Bar}}
+
+\DeclareMathOperator{\shvp}{\sf Shv_{\sf p}^{\sf cbl}}
+
+\DeclareMathOperator{\lkan}{{\sf LKan}}
+\DeclareMathOperator{\rkan}{{\sf RKan}}
+
+\DeclareMathOperator{\Diff}{{\sf Diff}}
+\DeclareMathOperator{\sh}{\sf shv}
+
+
+
+\DeclareMathOperator{\calg}{\mathsf{CAlg}}
+\DeclareMathOperator{\op}{\mathsf{op}}
+\DeclareMathOperator{\relop}{\mathsf{rel.op}}
+\DeclareMathOperator{\com}{\mathsf{Com}}
+\DeclareMathOperator{\bu}{\cB\mathsf{un}}
+\DeclareMathOperator{\bun}{\sf Bun}
+
+\DeclareMathOperator{\cMfld}{{\sf c}\cM\mathsf{fld}}
+\DeclareMathOperator{\cBun}{{\sf c}\cB\mathsf{un}}
+\DeclareMathOperator{\Bun}{\cB\mathsf{un}}
+
+\DeclareMathOperator{\dbu}{\mathsf{DBun}}
+
+\DeclareMathOperator{\dbun}{\mathsf{DBun}}
+
+\DeclareMathOperator{\bsc}{\mathsf{Bsc}}
+\DeclareMathOperator{\snglr}{\sf Snglr}
+
+\DeclareMathOperator{\Bsc}{\cB\mathsf{sc}}
+
+
+\DeclareMathOperator{\arbr}{\mathsf{Arbr}}
+\DeclareMathOperator{\Arbr}{\cA\mathsf{rbr}}
+\DeclareMathOperator{\Rf}{\cR\mathsf{ef}}
+\DeclareMathOperator{\drf}{\mathsf{Ref}}
+
+
+%\DeclareMathOperator{\st}{\mathsf{st}}
+\DeclareMathOperator{\sk}{\mathsf{sk}}
+\DeclareMathOperator{\Ex}{\mathsf{Ex}}
+
+\DeclareMathOperator{\sd}{\mathsf{sd}}
+
+\DeclareMathOperator{\inr}{\mathsf{inr}}
+
+\DeclareMathOperator{\cls}{\mathsf{cls}}
+\DeclareMathOperator{\act}{\mathsf{act}}
+\DeclareMathOperator{\rf}{\mathsf{ref}}
+\DeclareMathOperator{\pcls}{\mathsf{pcls}}
+\DeclareMathOperator{\opn}{\mathsf{open}}
+\DeclareMathOperator{\emb}{\mathsf{emb}}
+
+
+\DeclareMathOperator{\cbl}{\mathsf{cbl}}
+
+\DeclareMathOperator{\pcbl}{\mathsf{p.cbl}}
+
+
+\DeclareMathOperator{\gl}{\mathsf{GL}_1}
+
+\DeclareMathOperator{\Top}{\mathsf{Top}}
+\DeclareMathOperator{\Mfd}{{\cM}\mathsf{fd}}
+\DeclareMathOperator{\cMfd}{{\sf c}{\cM}\mathsf{fd}}
+\DeclareMathOperator{\Mfld}{{\cM}\mathsf{fd}}
+\DeclareMathOperator{\mfd}{\mathsf{Mfd}}
+\DeclareMathOperator{\Emb}{\mathsf{Emb}}
+\DeclareMathOperator{\enr}{\fE\mathsf{nr}}
+\DeclareMathOperator{\LEnr}{\mathsf{LEnr}}
+\DeclareMathOperator{\diff}{\mathsf{Diff}}
+\DeclareMathOperator{\conf}{\mathsf{Conf}}
+
+\DeclareMathOperator{\MC}{\mathsf{MC}}
+\DeclareMathOperator{\strat}{\mathsf{Strat}}
+\DeclareMathOperator{\Strat}{\cS\mathsf{trat}}
+\DeclareMathOperator{\kan}{\mathsf{Kan}}
+
+\DeclareMathOperator{\dd}{{\cD}\mathsf{isk}}
+
+\DeclareMathOperator{\loc}{\mathsf{Loc}}
+
+
+
+\DeclareMathOperator{\poset}{\mathsf{Poset}}
+
+
+\DeclareMathOperator{\spaces}{\cS\mathsf{paces}}
+\DeclareMathOperator{\Spaces}{\cS\mathsf{paces}}
+
+\DeclareMathOperator{\Space}{{\cS}\sf paces}
+\DeclareMathOperator{\spectra}{\cS\mathsf{pectra}}
+\DeclareMathOperator{\mfld}{\mathsf{Mfld}}
+\DeclareMathOperator{\Disk}{\cD{\mathsf{isk}}}
+\DeclareMathOperator{\cdisk}{{\sf c}\cD{\mathsf{isk}}}
+\DeclareMathOperator{\cDisk}{{\sf c}\cD{\mathsf{isk}}}
+\DeclareMathOperator{\sing}{\mathsf{Sing}}
+\DeclareMathOperator{\set}{{\mathsf{Sets}}}
+\DeclareMathOperator{\Aux}{\cA{\mathsf{ux}}}
+\DeclareMathOperator{\Adj}{\cA{\mathsf{dj}}}
+
+\DeclareMathOperator{\Dtn}{\cD{\mathsf{isk}^\tau_{\mathit n}}}
+
+
+\DeclareMathOperator{\sm}{\mathsf{sm}}
+\DeclareMathOperator{\vfr}{\sf vfr}
+\DeclareMathOperator{\fr}{\sf fr}
+\DeclareMathOperator{\sfr}{\sf sfr}
+
+
+\DeclareMathOperator{\bord}{\mathsf{Bord}}
+\DeclareMathOperator{\Bord}{\cB{\sf ord}}
+
+\DeclareMathOperator{\Corr}{{\sf Corr}}
+\DeclareMathOperator{\corr}{{\sf Corr}}
+
+
+\DeclareMathOperator{\Sing}{\mathsf{Sing}}
+
+
+\DeclareMathOperator{\BTop}{\sf BTop}
+\DeclareMathOperator{\BO}{{\mathsf BO}}
+
+
+\DeclareMathOperator{\Lie}{\sf Lie}
+
+\DeclareMathOperator{\id}{{\sf id}}
+
+
+\def\ot{\otimes}
+
+\DeclareMathOperator{\fin}{\sf Fin}
+
+\DeclareMathOperator{\oo}{\infty}
+
+
+\DeclareMathOperator{\hh}{\sf HC}
+
+\DeclareMathOperator{\free}{\sf Free}
+\DeclareMathOperator{\fpres}{\sf FPres}
+
+
+\DeclareMathOperator{\fact}{\sf Fact}
+\DeclareMathOperator{\ran}{\sf Ran}
+
+\DeclareMathOperator{\disk}{\sf Disk}
+
+\DeclareMathOperator{\ccart}{\sf cCart}
+\DeclareMathOperator{\cart}{\sf Cart}
+\DeclareMathOperator{\rfib}{\sf RFib}
+\DeclareMathOperator{\lfib}{\sf LFib}
+
+
+\DeclareMathOperator{\tr}{\triangleright}
+\DeclareMathOperator{\tl}{\triangleleft}
+
+
+\newcommand{\lag}{\langle}
+\newcommand{\rag}{\rangle}
+
+
+\newcommand{\w}{\widetilde}
+\newcommand{\un}{\underline}
+\newcommand{\ov}{\overline}
+\newcommand{\nn}{\nonumber}
+\newcommand{\nid}{\noindent}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\xra}{\xrightarrow}
+\newcommand{\xla}{\xleftarrow}
+
+\newcommand{\weq}{\xrightarrow{\sim}}
+\newcommand{\cofib}{\hookrightarrow}
+\newcommand{\fib}{\twoheadrightarrow}
+
+\def\llarrow{   \hspace{.05cm}\mbox{\,\put(0,-2){$\leftarrow$}\put(0,2){$\leftarrow$}\hspace{.45cm}}}
+\def\rrarrow{   \hspace{.05cm}\mbox{\,\put(0,-2){$\rightarrow$}\put(0,2){$\rightarrow$}\hspace{.45cm}}}
+\def\lllarrow{  \hspace{.05cm}\mbox{\,\put(0,-3){$\leftarrow$}\put(0,1){$\leftarrow$}\put(0,5){$\leftarrow$}\hspace{.45cm}}}
+\def\rrrarrow{  \hspace{.05cm}\mbox{\,\put(0,-3){$\rightarrow$}\put(0,1){$\rightarrow$}\put(0,5){$\rightarrow$}\hspace{.45cm}}}
+
+\def\cA{\mathcal A}\def\cB{\mathcal B}\def\cC{\mathcal C}\def\cD{\mathcal D}
+\def\cE{\mathcal E}\def\cF{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
+\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathcal O}\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
+\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
+
+\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbb C}\def\DD{\mathbb D}
+\def\EE{\mathbb E}\def\FF{\mathbb F}\def\GG{\mathbb G}\def\HH{\mathbb H}
+\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
+\def\MM{\mathbb M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbb P}
+\def\QQ{\mathbb Q}\def\RR{\mathbb R}\def\SS{\mathbb S}\def\TT{\mathbb T}
+\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
+\def\YY{\mathbb Y}\def\ZZ{\mathbb Z}
+
+\def\sA{\mathsf A}\def\sB{\mathsf B}\def\sC{\mathsf C}\def\sD{\mathsf D}
+\def\sE{\mathsf E}\def\sF{\mathsf F}\def\sG{\mathsf G}\def\sH{\mathsf H}
+\def\sI{\mathsf I}\def\sJ{\mathsf J}\def\sK{\mathsf K}\def\sL{\mathsf L}
+\def\sM{\mathsf M}\def\sN{\mathsf N}\def\sO{\mathsf O}\def\sP{\mathsf P}
+\def\sQ{\mathsf Q}\def\sR{\mathsf R}\def\sS{\mathsf S}\def\sT{\mathsf T}
+\def\sU{\mathsf U}\def\sV{\mathsf V}\def\sW{\mathsf W}\def\sX{\mathsf X}
+\def\sY{\mathsf Y}\def\sZ{\mathsf Z}
+
+\def\bA{\mathbf A}\def\bB{\mathbf B}\def\bC{\mathbf C}\def\bD{\mathbf D}
+\def\bE{\mathbf E}\def\bF{\mathbf F}\def\bG{\mathbf G}\def\bH{\mathbf H}
+\def\bI{\mathbf I}\def\bJ{\mathbf J}\def\bK{\mathbf K}\def\bL{\mathbf L}
+\def\bM{\mathbf M}\def\bN{\mathbf N}\def\bO{\mathbf O}\def\bP{\mathbf P}
+\def\bQ{\mathbf Q}\def\bR{\mathbf R}\def\bS{\mathbf S}\def\bT{\mathbf T}
+\def\bU{\mathbf U}\def\bV{\mathbf V}\def\bW{\mathbf W}\def\bX{\mathbf X}
+\def\bY{\mathbf Y}\def\bZ{\mathbf Z}
+\def\bdelta{\mathbf\Delta}
+\def\blambda{\mathbf\Lambda}
+
+
+\def\fA{\frak A}\def\fB{\frak B}\def\fC{\frak C}\def\fD{\frak D}
+\def\fE{\frak E}\def\fF{\frak F}\def\fG{\frak G}\def\fH{\frak H}
+\def\fI{\frak I}\def\fJ{\frak J}\def\fK{\frak K}\def\fL{\frak L}
+\def\fM{\frak M}\def\fN{\frak N}\def\fO{\frak O}\def\fP{\frak P}
+\def\fQ{\frak Q}\def\fR{\frak R}\def\fS{\frak S}\def\fT{\frak T}
+\def\fU{\frak U}\def\fV{\frak V}\def\fW{\frak W}\def\fX{\frak X}
+\def\fY{\frak Y}\def\fZ{\frak Z}
+
+\def\bcA{\boldsymbol{\mathcal A}}\def\bcB{\boldsymbol{\mathcal B}}\def\bcC{\boldsymbol{\mathcal C}}
+\def\bcD{\boldsymbol{\mathcal D}}\def\bcE{\boldsymbol{\mathcal E}}\def\bcF{\boldsymbol{\mathcal F}}
+\def\bcG{\boldsymbol{\mathcal G}}\def\bcH{\boldsymbol{\mathcal H}}\def\bcI{\boldsymbol{\mathcal I}}
+\def\bcJ{\boldsymbol{\mathcal J}}\def\bcK{\boldsymbol{\mathcal K}}\def\bcL{\boldsymbol{\mathcal L}}
+\def\bcM{\boldsymbol{\mathcal M}}\def\bcN{\boldsymbol{\mathcal N}}\def\bcO{\boldsymbol{\mathcal O}}\def\bcP{\boldsymbol{\mathcal P}}\def\bcQ{\boldsymbol{\mathcal Q}}\def\bcR{\boldsymbol{\mathcal R}}
+\def\bcS{\boldsymbol{\mathcal S}}\def\bcT{\boldsymbol{\mathcal T}}\def\bcU{\boldsymbol{\mathcal U}}
+\def\bcV{\boldsymbol{\mathcal V}}\def\bcW{\boldsymbol{\mathcal W}}\def\bcX{\boldsymbol{\mathcal X}}
+\def\bcY{\boldsymbol{\mathcal Y}}\def\bcZ{\boldsymbol{\mathcal Z}}
+
+\def\ccD{{\sf c}\boldsymbol{\mathcal D}}
+
+\DeclareMathOperator{\Stri}{\boldsymbol{\cS}{\sf tri}}
+\DeclareMathOperator{\btheta}{\boldsymbol{\Theta}}
+\DeclareMathOperator{\adj}{{\sf adj}}
+
